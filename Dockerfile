@@ -12,9 +12,10 @@ COPY . /app
 # Install app dependencies
 ENV NPM_CONFIG_LOGLEVEL warn
 
-RUN npm install --production --registry=https://registry.npm.taobao.org
-
+RUN npm install --production
+RUN npm install pm2@latest -g
+RUN node -v
 # Show current folder structure in logs
 #RUN ls -al -R
 EXPOSE 3000
-CMD [ "pm2-docker", "start", "pm2.json" ]
+CMD [ "pm2-runtime", "start", "pm2.json" ]
