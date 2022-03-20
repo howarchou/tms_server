@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "tms-front-ssr",
-      "script": "./dist/server.js",
+      "script": "./index.js",
       "cwd": "./",
       "interpreter": "",
       "interpreter_args": "",

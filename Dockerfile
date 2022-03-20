@@ -1,9 +1,9 @@
 FROM keymetrics/pm2:latest-alpine
 
 # Bundle APP files
-RUN mkdir -p /data/tms_frontend
-WORKDIR /data/tms_frontend
-COPY index.js /data/tms_frontend/
+RUN mkdir -p /app
+WORKDIR /app
+COPY . /app
 
 #COPY src src/
 #COPY package.json .
@@ -11,7 +11,8 @@ COPY index.js /data/tms_frontend/
 
 # Install app dependencies
 ENV NPM_CONFIG_LOGLEVEL warn
-RUN npm install --production
+
+RUN npm install --production --registry=https://registry.npm.taobao.org
 
 # Show current folder structure in logs
 #RUN ls -al -R
