@@ -12,6 +12,7 @@
 /out/
 /.idea/
 /dist/
+/logs/
 
 # production
 /build

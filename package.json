@@ -5,10 +5,8 @@
   "author": "howarchou@sina.com",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "express": "^4.17.3"
+    "start": "node index.js",
+    "dev": "pm2 start pm2.json"
   },
   "devDependencies": {
     "koa": "^2.13.4",

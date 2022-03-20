@@ -42,7 +42,6 @@ app.use(async (ctx, next) => {
             path: ctx.request.url,
         });
         if (error) {
-            console.log('----------------服务端报错-------------------', error);
             ctx.throw(500, error);
         }
         ctx.body = html;
@@ -55,10 +54,10 @@ app.use(async (ctx, next) => {
  *  这里最好是用nginx配置静态目录，如果是用cdn方式部署，这里可以忽略
  *
  */
-app.use(mount('/dist', require('koa-static')(root)));
+app.use(mount('/', require('koa-static')(root)));
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Tms-ssr app listening on port ${port}`)
 })
 
 module.exports = app.callback();
